@@ -1,6 +1,7 @@
 import BlogList from './BlogList';
 import useFetch from './useFetch';
 import Navbar from "./Nav"
+import Footer from "./Footer"
 
 const Home = () => {
     const { data: blogs, isPending, error } = useFetch('http://localhost:3000/blog');
@@ -14,6 +15,7 @@ const Home = () => {
         <div clasName="home">
             <Navbar/>
             <BlogList blogs={blogs}/>
+            <Footer/>
         </div>
     );
 }

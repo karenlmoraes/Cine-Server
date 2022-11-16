@@ -8,7 +8,7 @@ const BlogList = ({blogs}) => {
     return (
             <div className='flex flex-wrap -m-5 p-5'>
             {blogsFiltrados.map((item, index) => (
-                <div key={index} className='p-5 sm:w-1/2 lg:w-1/4  grid' >
+                <div key={index} className='p-5 sm:w-1/2 lg:w-1/5  grid' >
                     <div className='h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden'>
                         <img src={`${item.image}`} alt="" className='bg-black lg:h-72 md:h-48 w-full object-cover object-center'></img>
                        <Link data={`${item.id}`} to={`/SobreMovie/${item.id}`} >
