@@ -1,10 +1,10 @@
 import BlogList from './BlogList';
-import useFetch from './useFetch';
+import useAxios from './UseAxios';
 import Navbar from "./Nav"
 import Footer from "./Footer"
 
 const Home = () => {
-    const { data: blogs, isPending, error } = useFetch('http://localhost:3000/blog');
+    const { data: blogs, isPending, error } = useAxios('http://localhost:3000/blog');
     if (isPending) {
         return <div className="loader"></div>;
     }

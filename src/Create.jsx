@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate} from 'react-router-dom';
+import axios from "axios";
 
 
 const Create = () => {
-    const history = useNavigate();
+    const send = useNavigate();
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('');
@@ -13,23 +14,19 @@ const Create = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const data = { title, body, date, avaliacao, author, image };
-        fetch('http://localhost:3000/blog', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(data => {
-                history.push('/');
-            }).catch(err => {
-                console.log(err);
-            }
-            );
+        const newPost = { title, body, date, avaliacao, author, image };
+            axios.post('http://localhost:3000/blog', newPost)
+            .then((res) => {
+              send('/');
+              console.log(res)
+            })
+            .catch((error) => {
+              
+              console.log(error)
+            })
     }
 
+         ///Div Cria filme
     return (
         <div className="create">
             <h1>Criar novo Filme no blog</h1>
