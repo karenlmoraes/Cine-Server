@@ -10,19 +10,25 @@ const Update = () => {
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
+ 
+
     useEffect(() => {
-        fetch('http://localhost:3000/blog/' + id)
-            .then(res => res.json())
-            .then(data => {
+        axios.get('http://localhost:3000/blog/' + id)
+            .then((res) => {
+                const data = res.data
                 setBlog(data);
+                setIsPending(false)
+                console.log(res.data)
+            })
+            .catch((error) => {
+                setError(error);
                 setIsPending(false);
-            }
-            ).catch(err => {
-                setError(err);
-                setIsPending(false);
-            }
-            );
-    }, []);
+                console.log(error)
+            })
+
+    },[]);
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()

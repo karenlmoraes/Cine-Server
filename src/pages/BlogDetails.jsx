@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
-import useAxios from './UseAxios';
+import useAxios from '../components/UseAxios';
 import axios from "axios";
 
 

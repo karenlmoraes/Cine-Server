@@ -29,7 +29,7 @@ const Create = () => {
          ///Div Cria filme
     return (
         <div className="create">
-            <h1>Criar novo Filme no blog</h1>
+            <h1>Adicionar um novo Filme no blog</h1>
             <form className="create-form" onSubmit={handleSubmit}>
                
                 <input className="create-input" placeholder="TÍTULO" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
