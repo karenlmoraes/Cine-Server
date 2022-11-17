@@ -1,7 +1,6 @@
 import BlogList from './BlogList';
-import useAxios from './UseAxios';
-import Navbar from "./Nav"
-import Footer from "./Footer"
+import useAxios from '../components/UseAxios';
+
 
 const Home = () => {
     const { data: blogs, isPending, error } = useAxios('http://localhost:3000/blog');
@@ -13,9 +12,7 @@ const Home = () => {
     }
     return (
         <div clasName="home">
-            <Navbar/>
             <BlogList blogs={blogs}/>
-            <Footer/>
         </div>
     );
 }

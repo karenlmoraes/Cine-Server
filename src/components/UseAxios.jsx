@@ -23,7 +23,7 @@ const useAxios = (url) => {
             })
 
     }
-        , [url]);
+        ,[url]);
 
     return { data, isPending, error };
 }
