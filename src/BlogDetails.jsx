@@ -1,11 +1,15 @@
-import { useNavigate, useParams } from "react-router";
-import useFetch from './useFetch';
+import { useParams } from "react-router";
+import { useNavigate } from "react-router-dom";
+import useAxios from './UseAxios';
+import axios from "axios";
+
+
 
 const BlogDetails = () => {
 
-    const history = useNavigate();
+    const send = useNavigate()
     const { id } = useParams();
-    const { data: blog, isPending, error } = useFetch('http://localhost:3000/blog/' + id);
+    const { data: blog, isPending, error } = useAxios('http://localhost:3000/blog/' + id);
     if (isPending) {
         return <div className="loader"></div>;
     }
@@ -18,22 +22,20 @@ const BlogDetails = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        history.push('/update/' + id);
+        send('/update/' + id);
     }
 
     const handleDelete = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/blog/' + id, {
-            method: 'DELETE'
+        axios.delete('http://localhost:3000/blog/' + id )
+        .then((res) => {
+          send('/');
+          console.log("delete ok")
         })
-            .then(res => res.json())
-            .then(data => {
-                history.push('/');
-            }
-            ).catch(err => {
-                console.log(err);
-            }
-            );
+        .catch((error) => {
+          console.log(error)
+        })
+      
     }
 
 
@@ -42,13 +44,13 @@ const BlogDetails = () => {
         <div className="blog-details">
             <img src={blog.image} alt={blog.title} />
             <h1>{blog.title}</h1>
-            <p><h3>Autor:</h3>{blog.author}</p>
+            <p><h3 >Autor:</h3>{blog.author}</p>
             <p><h3>Descrição:</h3>{blog.body}</p>
             <p><h3>Data:</h3>{blog.date}</p>
             <p><h3>Avaliação:</h3>{blog.avaliacao}</p>
             <button className="atualizar" onClick={handleSubmit}>Atualizar</button>
             <button className="delete" onClick={handleDelete}>Deletar</button>
-            <button className="voltar" onClick={() => history.push("/")}>Voltar</button>
+            <button className="voltar" onClick={() => send(-1)}>Voltar</button>
         </div>
     );
     
