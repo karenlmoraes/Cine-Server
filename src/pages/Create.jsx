@@ -30,62 +30,62 @@ const Create = () => {
     return (
         <div className="create">
 
-            <div class="bg-blue-200 min-h-screen flex items-center">
-                <div class="w-full">
-                    <h2 class="text-center text-blue-400 font-bold text-2xl mt-5 mb-10">Adicione um novo Filme</h2>
-                    <div class="bg-white p-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/2">
+            <div className="bg-blue-200 min-h-screen flex items-center">
+                <div className="w-full">
+                    <h2 className="text-center text-blue-400 font-bold text-2xl mt-5 mb-10">Adicione um novo Filme</h2>
+                    <div className="bg-white p-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/2">
                         <form action="" onSubmit={handleSubmit}>
-                            <div class="mb-5">
-                                <label class="block mb-2 font-bold text-gray-600">Título</label>
+                            <div className="mb-5">
+                                <label className="block mb-2 font-bold text-gray-600">Título</label>
                                 <input placeholder="TÍTULO" type="text" value={title}
-                                    onChange={(e) => setTitle(e.target.value)} class="border 
+                                    onChange={(e) => setTitle(e.target.value)} className="border 
                                 border-gray-300 shadow p-3 w-full rounded mb-"/>
                             </div>
 
-                            <div class="mb-5">
-                                <label class="block mb-2 font-bold text-gray-600">Descrição</label>
+                            <div className="mb-5">
+                                <label className="block mb-2 font-bold text-gray-600">Descrição</label>
                                 <textarea placeholder="DESCRIÇÂO" value={body}
-                                    onChange={(e) => setBody(e.target.value)} class="border 
+                                    onChange={(e) => setBody(e.target.value)} className="border 
                                 border-gray-300 shadow p-3 w-full rounded mb-"/>
-                                {/* <p class="text-sm text-red-400 mt-2">Twitter username is required</p> */}
+                                {/* <p className="text-sm text-red-400 mt-2">Twitter username is required</p> */}
                             </div>
 
-                            <div class="mb-5">
-                                <label class="block mb-2 font-bold text-gray-600">Diretor</label>
+                            <div className="mb-5">
+                                <label className="block mb-2 font-bold text-gray-600">Diretor</label>
                                 <input placeholder="DIRETOR" type="text" value={author}
-                                    onChange={(e) => setAuthor(e.target.value)} class="border 
+                                    onChange={(e) => setAuthor(e.target.value)} className="border 
                                 border-gray-300 shadow p-3 w-full rounded mb-"/>
-                                {/* <p class="text-sm text-red-400 mt-2">Twitter username is required</p> */}
+                                {/* <p className="text-sm text-red-400 mt-2">Twitter username is required</p> */}
                             </div>
 
-                            <div class="mb-5">
-                                <label class="block mb-2 font-bold text-gray-600">Data</label>
+                            <div className="mb-5">
+                                <label className="block mb-2 font-bold text-gray-600">Data</label>
                                 <input placeholder="DATA" type="text" value={date}
-                                    onChange={(e) => setDate(e.target.value)} class="border 
+                                    onChange={(e) => setDate(e.target.value)} className="border 
                                  border-gray-300 shadow p-3 w-full rounded mb-"/>
-                                {/* <p class="text-sm text-red-400 mt-2">Twitter username is required</p> */}
+                                {/* <p className="text-sm text-red-400 mt-2">Twitter username is required</p> */}
                             </div>
 
-                            <div class="mb-5">
-                                <label class="block mb-2 font-bold text-gray-600">Avaliaçâo</label>
+                            <div className="mb-5">
+                                <label className="block mb-2 font-bold text-gray-600">Avaliaçâo</label>
                                 <input placeholder="AVALIAÇÃO" type="text" value={avaliacao}
-                                    onChange={(e) => setAvaliacao(e.target.value)} class="border 
+                                    onChange={(e) => setAvaliacao(e.target.value)} className="border 
                                  border-gray-300 shadow p-3 w-full rounded mb-"/>
-                                {/* <p class="text-sm text-red-400 mt-2">Twitter username is required</p> */}
+                                {/* <p className="text-sm text-red-400 mt-2">Twitter username is required</p> */}
                             </div>
 
-                            <div class="mb-5">
-                                <label class="block mb-2 font-bold text-gray-600">Imagem URL</label>
+                            <div className="mb-5">
+                                <label className="block mb-2 font-bold text-gray-600">Imagem URL</label>
                                 <input placeholder="IMAGEM URL" type="text" value={image}
-                                    onChange={(e) => setImage(e.target.value)} class="border 
+                                    onChange={(e) => setImage(e.target.value)} className="border 
                                  border-gray-300 shadow p-3 w-full rounded mb-"/>
-                                {/* <p class="text-sm text-red-400 mt-2">Twitter username is required</p> */}
+                                {/* <p className="text-sm text-red-400 mt-2">Twitter username is required</p> */}
                             </div>
 
-                            <button type="submit" class="block w-full bg-green-600 text-white 
+                            <button type="submit" className="block w-full bg-green-600 text-white 
                             font-bold p-4 rounded-lg">Criar</button>
 
-                            <button class="py-3 px-8 mt-4  bg-slate-400 text-green-100 font-bold rounded-lg"
+                            <button className="py-3 px-8 mt-4  bg-slate-400 text-green-100 font-bold rounded-lg"
                                 onClick={() => send("/")}>Back</button>
                         </form>
                     </div>
