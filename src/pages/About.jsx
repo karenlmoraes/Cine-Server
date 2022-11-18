@@ -18,8 +18,8 @@ const About = () => {
                                 <div >
                                 Igor do Santos
                                 <br />
-                              <a className="text-center" href="https://www.linkedin.com/in/igor-ferreira-a7541a1b5" target="_blank">Linkedin</a>/<a
-                               href="https://github.com/IgorFerrer053" target="_blank">GitHub</a>
+                              <a className="hover:text-lime-600" href="https://www.linkedin.com/in/igor-ferreira-a7541a1b5" target="_blank">Linkedin</a>/<a
+                              className="hover:text-lime-600" href="https://github.com/IgorFerrer053" target="_blank">GitHub</a>
 
                                 </div>
                                 </div>
@@ -37,8 +37,8 @@ const About = () => {
                                 <div >
                                 Karen Lopes
                                 <br />
-                                <a href="https://www.linkedin.com/in/karen-moraes-014251150" target="_blank">Linkedin</a>/<a
-                                href="https://github.com/karenlmoraes" target="_blank">GitHub</a>
+                                <a className="hover:text-lime-600" href="https://www.linkedin.com/in/karen-moraes-014251150" target="_blank">Linkedin</a>/<a
+                                className="hover:text-lime-600" href="https://github.com/karenlmoraes" target="_blank">GitHub</a>
 
                                 </div>
                                 </div>
@@ -56,8 +56,8 @@ const About = () => {
                                 <div >
                                 Beatriz Fidelis
                                 <br />
-                              <a className="text-center" href="https://www.linkedin.com/in/beatriz-fidelis" target="_blank">Linkedin</a>/<a
-                               href="https://github.com/fidelisbia" target="_blank">GitHub</a>
+                              <a className="hover:text-lime-600" href="https://www.linkedin.com/in/beatriz-fidelis" target="_blank">Linkedin</a>/<a
+                               className="hover:text-lime-600" href="https://github.com/fidelisbia" target="_blank">GitHub</a>
 
                                 </div>
                                 </div>
@@ -75,8 +75,8 @@ const About = () => {
                                 <div >
                                 Thâmara Evelyn
                                 <br />
-                              <a className="text-center" href="https://www.linkedin.com/in/th%C3%A2mara-evelyn-328035115" target="_blank">Linkedin</a>/<a
-                               href="https://github.com/Thamaraeevelyn" target="_blank">GitHub</a>
+                              <a className="hover:text-lime-600" href="https://www.linkedin.com/in/th%C3%A2mara-evelyn-328035115" target="_blank">Linkedin</a>/<a
+                                  className="hover:text-lime-600"     href="https://github.com/Thamaraeevelyn" target="_blank">GitHub</a>
 
                                 </div>
                                 </div>
@@ -95,8 +95,8 @@ const About = () => {
                                 Matheus Lisboa
                                 <br />
 
-                                <a href="https://www.linkedin.com/in/matheus-lisboa-4637aa24b" target="_blank">Linkedin</a>/<a
-                                href="https://github.com/MatokoLB" target="_blank">GitHub</a>
+                                <a className="hover:text-lime-600" href="https://www.linkedin.com/in/matheus-lisboa-4637aa24b" target="_blank">Linkedin</a>/<a
+                                className="hover:text-lime-600" href="https://github.com/MatokoLB" target="_blank">GitHub</a>
 
                                 </div>
                                 </div>

@@ -5,7 +5,7 @@ const Header = () => {
     const [hidden, setHidden] = useState(false)
 
     return (
-        <nav className="tailwind-menu z-50 sticky top-0 w-full p-4 bg-white shadow lg:shadow-none">
+        <nav className="tailwind-menu z-50 sticky top-0 w-full p-4 bg-blue-200 shadow-lg ">
             <div className="flex flex-wrap items-center justify-between container mx-auto px-4">
                 <div className="flex flex-shrink-0 mr-12 ">
                     <span className="text-2xl font-[Poppins] cursor-pointer" >

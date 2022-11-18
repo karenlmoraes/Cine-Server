@@ -2,11 +2,17 @@ import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
 
+
 const BlogList = ({ blogs }) => {
+    console.log(blogs)
     const [busca, setBusca] = useState('');
     const blogsFiltrados = blogs.filter(blog => blog.title.toLowerCase().includes(busca.toLowerCase()));
-    return (
-        <div className='flex flex-wrap -m-5 p-5'>
+
+    return ( 
+
+             
+
+     <div className='flex flex-wrap -m-5 p-5 '>
             {blogsFiltrados.map((item, index) => (
                 <div key={index} className='p-5 sm:w-1/2 lg:w-1/5  grid' >
                     <div className='h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden'>
