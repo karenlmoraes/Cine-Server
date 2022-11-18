@@ -13,7 +13,7 @@ const Update = () => {
  
 
     useEffect(() => {
-        axios.get('http://localhost:3000/blog/' + id)
+        axios.get('https://server-json.onrender.com/blog/' + id)
             .then((res) => {
                 const data = res.data
                 setBlog(data);
@@ -32,7 +32,7 @@ const Update = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put('http://localhost:3000/blog/' + id, blog)
+        axios.put('https://server-json.onrender.com/blog/' + id, blog)
             .then((res) => {
                 send('/');
                 console.log(res)

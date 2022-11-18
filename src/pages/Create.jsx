@@ -15,7 +15,7 @@ const Create = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const newPost = { title, body, date, avaliacao, author, image };
-            axios.post('http://localhost:3000/blog', newPost)
+            axios.post('https://server-json.onrender.com/blog', newPost)
             .then((res) => {
               send('/');
               console.log(res)

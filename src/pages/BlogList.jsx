@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import Foto from "../../public/foto.jpg"
+
 
 const BlogList = ({ blogs }) => {
     const [busca, setBusca] = useState('');
