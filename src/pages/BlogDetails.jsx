@@ -9,7 +9,7 @@ const BlogDetails = () => {
 
     const send = useNavigate()
     const { id } = useParams();
-    const { data: blog, isPending, error } = useAxios('http://localhost:3000/blog/' + id);
+    const { data: blog, isPending, error } = useAxios('https://server-json.onrender.com/blog/' + id);
     if (isPending) {
         return <div className="loader"></div>;
     }
@@ -27,7 +27,7 @@ const BlogDetails = () => {
 
     const handleDelete = (e) => {
         e.preventDefault();
-        axios.delete('http://localhost:3000/blog/' + id )
+        axios.delete('https://server-json.onrender.com/blog/' + id )
         .then((res) => {
           send('/');
           console.log("delete ok")
