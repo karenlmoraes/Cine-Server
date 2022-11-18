@@ -7,14 +7,15 @@ const Update = () => {
     const send = useNavigate();
     const { id } = useParams();
     const [blog, setBlog] = useState({});
-    const [isPending, setIsPending] = useState(true);
+    const [isPending, setIsPending] = useState(false);
     const [error, setError] = useState(null);
 
- 
+
 
     useEffect(() => {
         axios.get('https://server-json.onrender.com/blog/' + id)
             .then((res) => {
+                setIsPending(true)
                 const data = res.data
                 setBlog(data);
                 setIsPending(false)
@@ -26,7 +27,7 @@ const Update = () => {
                 console.log(error)
             })
 
-    },[]);
+    }, []);
 
 
 
@@ -43,27 +44,95 @@ const Update = () => {
     }
 
 
-    return (
-        <div className="update">
-            <h1>Atualizar</h1>
-            <form className="update-form" onSubmit={handleSubmit}>
+    return (<div>
 
-                <input type="text" className="update-input" value={blog.title} onChange={e => setBlog({ ...blog, title: e.target.value })} />
 
-                <input type="text" className="update-input" value={blog.author} onChange={e => setBlog({ ...blog, author: e.target.value })} />
+        {isPending && 
+        <div className="loader  h-[80vh] flex flex-col justify-center items-center  ">
+            <div className='
+           h-16 w-16 border-4
+           border-l-slate-500 
+           border-r-slate-500 
+           border-b-slate-500 
+           border-t-blue-700 
+           animate-spin ease-linear
+           rounded-full'>
+            </div>
+            Carregando...
+        </div>}
 
-                <textarea className="update-input" value={blog.body} onChange={e => setBlog({ ...blog, body: e.target.value })} />
 
-                <input type="text" className="update-input" value={blog.date} onChange={e => setBlog({ ...blog, date: e.target.value })} />
 
-                <input type="text" className="update-input" value={blog.avaliacao} onChange={e => setBlog({ ...blog, avaliacao: e.target.value })} />
 
-                <input type="text" className="update-input" value={blog.image} onChange={e => setBlog({ ...blog, image: e.target.value })} />
+    {!isPending && 
+    <div className="update">
+    <div class="bg-blue-200 min-h-screen flex items-center">
+        <div class="w-full">
+            <h2 class="text-center text-blue-400 font-bold text-2xl mt-5 mb-10">Filme</h2>
+            <div class="bg-white p-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/2">
+                <form action="" onSubmit={handleSubmit}>
+                    <div class="mb-5">
+                        <label class="block mb-2 font-bold text-gray-600">TÍTULO</label>
+                        <input type="text" className="update-input" value={blog.title} onChange={e => setBlog({ ...blog, title: e.target.value })}
+                            class="border 
+                                border-gray-300 shadow p-3 w-full rounded mb-"/>
+                    </div>
 
-                <button className="atualizado" type="submit">Atualizar</button>
-            </form>
+                    <div class="mb-5">
+                        <label class="block mb-2 font-bold text-gray-600">DESCRIÇÂO</label>
+                        <input type="text" className="update-input" value={blog.author} onChange={e => setBlog({ ...blog, author: e.target.value })}
+                            class="border 
+                                border-red-300 shadow p-3 w-full rounded mb-"/>
+                        {/* <p class="text-sm text-red-400 mt-2">Twitter username is required</p> */}
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="block mb-2 font-bold text-gray-600">DIRETOR</label>
+                        <textarea className="update-input" value={blog.body} onChange={e => setBlog({ ...blog, body: e.target.value })}
+                            class="border 
+                                border-red-300 shadow p-3 w-full rounded mb-"/>
+                        {/* <p class="text-sm text-red-400 mt-2">Twitter username is required</p> */}
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="block mb-2 font-bold text-gray-600">DATA</label>
+                        <input type="text" className="update-input" value={blog.date} onChange={e => setBlog({ ...blog, date: e.target.value })}
+                            class="border 
+                                border-red-300 shadow p-3 w-full rounded mb-"/>
+                        {/* <p class="text-sm text-red-400 mt-2">Twitter username is required</p> */}
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="block mb-2 font-bold text-gray-600">AVALIAÇÃO</label>
+                        <input type="text" className="update-input" value={blog.avaliacao} onChange={e => setBlog({ ...blog, avaliacao: e.target.value })}
+                            class="border 
+                                border-red-300 shadow p-3 w-full rounded mb-"/>
+                        {/* <p class="text-sm text-red-400 mt-2">Twitter username is required</p> */}
+                    </div>
+
+                    <div class="mb-5">
+                        <label class="block mb-2 font-bold text-gray-600">IMAGEM URL</label>
+                        <input type="text" className="update-input" value={blog.image} onChange={e => setBlog({ ...blog, image: e.target.value })}
+                            class="border 
+                                border-red-300 shadow p-3 w-full rounded mb-"/>
+                        {/* <p class="text-sm text-red-400 mt-2">Twitter username is required</p> */}
+                    </div>
+
+                    <button type="submit" class="block w-full bg-green-600 text-white font-bold p-4 rounded-lg">Atualizar</button>
+                    <button class="py-3 px-8 mt-4  bg-slate-400 text-green-100 font-bold rounded-lg" onClick={() => send("/")}>Back</button>
+                </form>
+            </div>
         </div>
-    );
+    </div>
+
+
+
+
+
+
+</div>}
+        
+</div>  );
 }
 
 export default Update;
